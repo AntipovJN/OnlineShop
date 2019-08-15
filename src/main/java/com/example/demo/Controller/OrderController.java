@@ -59,8 +59,8 @@ public class OrderController {
                     basketService.getBasket(user).get());
             Optional<Order> optionalOrder = orderService.getByCode(optionalCode.get());
             if (optionalOrder.isPresent()) {
-//                model.addAttribute("orderId", optionalOrder.get().getId());
-                return "redirect:/user/order/confirm?orderId="+optionalOrder.get().getId();
+                model.addAttribute("orderId", optionalOrder.get().getId());
+                return "confirmOrder";
             }
         }
         return "redirect:/user/store";
@@ -101,5 +101,4 @@ public class OrderController {
             return "confirmOrder";
         }
     }
-
 }
