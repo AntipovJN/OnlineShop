@@ -30,13 +30,13 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     @Override
     public void updateOrder(Order order) {
-
+        orderRepository.save(order);
     }
 
     @Transactional
     @Override
     public void removeOrder(Order order) {
-
+        orderRepository.delete(order);
     }
 
     @Transactional
